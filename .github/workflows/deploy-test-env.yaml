@@ -5,11 +5,11 @@ name: Cloudhub deployment with Maven [Test]
 on:
   push:
     branches: [ qa ]
-	
+
 env:
   GLOBAL_MULESOFT_CICD_CLIENT_ID : ${{ secrets.appClientId }}
   GLOBAL_MULESOFT_CICD_CLIENT_SECRET : ${{ secrets.appClientSecret }}
-    
+
 jobs:
   BuildAndDeploy:
     runs-on: ubuntu-latest
