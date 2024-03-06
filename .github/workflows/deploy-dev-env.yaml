@@ -18,7 +18,7 @@ jobs:
     steps:
     
     - name: Checkout repository
-      uses: actions/checkout@v3
+      uses: actions/checkout@v2
 
     - name: Upload artifact to Exchange
       run: mvn clean -B deploy -Dmule.appClientId=GLOBAL_MULESOFT_CICD_CLIENT_ID -Dmule.appClientSecret=GLOBAL_MULESOFT_CICD_CLIENT_SECRET 
