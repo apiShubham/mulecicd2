@@ -1,6 +1,13 @@
-<?xml version="1.0" encoding="UTF-8"?>
+
+This XML file does not appear to have any style information associated
+with it. The document tree is shown below.
 <settings>
 	<servers>
+		<server>
+			<id>MuleRepository</id>
+			<username>${mule.nexusUsername}</username>
+			<password>${mule.nexusPassword}</password>
+		</server>
 		<server>
 			<id>anypoint-exchange-v3</id>
 			<username>~~~Client~~~</username>
@@ -9,13 +16,33 @@
 	</servers>
 	<profiles>
 		<profile>
+			<id>Mule</id>
+			<activation>
+				<activeByDefault>true</activeByDefault>
+			</activation>
+			<repositories>
+				<repository>
+					<id>MuleRepository</id>
+					<name>MuleRepository</name>
+					<url>https://repository.mulesoft.org/nexus-ee/content/repositories/releases-ee/
+					</url>
+					<layout>default</layout>
+					<releases>
+						<enabled>true</enabled>
+					</releases>
+					<snapshots>
+						<enabled>true</enabled>
+					</snapshots>
+				</repository>
+			</repositories>
+		</profile>
+		<profile>
 			<id>anypoint-exchange-v3</id>
 			<activation>
 				<activeByDefault>true</activeByDefault>
 			</activation>
 			<properties>
-				<mulesoft.exchange.groupid>b8b790fb-4b4b-4456-8466-366968787971
-				</mulesoft.exchange.groupid>
+				<mulesoft.exchange.groupid>b8b790fb-4b4b-4456-8466-366968787971</mulesoft.exchange.groupid>
 			</properties>
 			<repositories>
 				<repository>
