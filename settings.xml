@@ -6,12 +6,6 @@
 			<username>~~~Client~~~</username>
 			<password>${mule.appClientId}~?~${mule.appClientSecret}</password>
 		</server>
-		<server>
-			<id>Repository</id>
-			<username>~~~Client~~~</username>
-			<password>${mule.appClientId}~?~${mule.appClientSecret}</password>
-		</server>
-
 	</servers>
 	<profiles>
 		<profile>
