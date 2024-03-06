@@ -18,10 +18,10 @@ jobs:
     steps:
     
     - name: Checkout repository
-      uses: actions/checkout@v2
+      uses: actions/checkout@v3
 
     - name: Upload artifact to Exchange
-      run: mvn clean deploy  -Dmule.appClientId=GLOBAL_MULESOFT_CICD_CLIENT_ID -Dmule.appClientSecret=GLOBAL_MULESOFT_CICD_CLIENT_SECRET 
+      run: mvn -B clean deploy -Dmule.appClientId=GLOBAL_MULESOFT_CICD_CLIENT_ID -Dmule.appClientSecret=GLOBAL_MULESOFT_CICD_CLIENT_SECRET 
       
     - name: Deploy with Maven
-      run: mvn clean deploy -DmuleDeploy -s settings.xml -Dmule.environment="Development" -Dmule.target="api-testSpace" -Dmule.appClientId=GLOBAL_MULESOFT_CICD_CLIENT_ID -Dmule.appClientSecret=GLOBAL_MULESOFT_CICD_CLIENT_SECRET -Dmule.grantType="client_credentials" -Dproject.name="mule-cicd2" -DappTag="dev" -Dmule.replicas="1" -Dmule.vCores="0.1"
+      run: mvn -B clean deploy -DmuleDeploy -s settings.xml -Dmule.environment="Development" -Dmule.target="api-testSpace" -Dmule.appClientId=GLOBAL_MULESOFT_CICD_CLIENT_ID -Dmule.appClientSecret=GLOBAL_MULESOFT_CICD_CLIENT_SECRET -Dmule.grantType="client_credentials" -Dproject.name="mule-cicd2" -DappTag="dev" -Dmule.replicas="1" -Dmule.vCores="0.1"
