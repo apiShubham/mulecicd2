@@ -21,4 +21,4 @@ jobs:
       uses: actions/checkout@v2
       
     - name: Deploy with Maven
-      run: mvn clean deploy -DmuleDeploy -Dmule.environment="qa" -Dmule.target="api-testSpace" -Dmule.appClientId=GLOBAL_MULESOFT_CICD_CLIENT_ID -Dmule.appClientSecret=GLOBAL_MULESOFT_CICD_CLIENT_SECRET -Dmule.grantType="client_credentials" -Dproject.name="mule-cicd2" -DappTag="qa" -Dmule.replicas="1" -Dmule.vCores="0.1"
+      run: mvn clean deploy -DmuleDeploy -s settings.xml -Dmule.environment="qa" -Dmule.target="api-testSpace" -Dmule.appClientId=GLOBAL_MULESOFT_CICD_CLIENT_ID -Dmule.appClientSecret=GLOBAL_MULESOFT_CICD_CLIENT_SECRET -Dmule.grantType="client_credentials" -Dproject.name="mule-cicd2" -DappTag="qa" -Dmule.replicas="1" -Dmule.vCores="0.1"
