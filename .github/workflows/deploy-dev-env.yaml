@@ -21,7 +21,7 @@ jobs:
       uses: actions/checkout@v3
 
     - name: Upload artifact to Exchange
-      run: mvn clean -B deploy -Dmule.appClientId=env.GLOBAL_MULESOFT_CICD_CLIENT_ID -Dmule.appClientSecret=env.GLOBAL_MULESOFT_CICD_CLIENT_SECRET 
+      run: mvn clean -B deploy -Dmule.appClientId="69bc2b14d9ec4209ba4d3c72a472f968" -Dmule.appClientSecret=env."C71AAC402Eb347c6AeAC64913e4D9b48" 
       
     - name: Deploy with Maven
       run: mvn clean -B deploy -DmuleDeploy -s settings.xml -Dmule.environment="Development" -Dmule.target="api-testSpace" -Dmule.appClientId=env.GLOBAL_MULESOFT_CICD_CLIENT_ID -Dmule.appClientSecret=env.GLOBAL_MULESOFT_CICD_CLIENT_SECRET -Dmule.grantType="client_credentials" -Dproject.name="mule-cicd2" -DappTag="dev" -Dmule.replicas="1" -Dmule.vCores="0.1"
